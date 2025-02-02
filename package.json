@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome lint .",
+    "format": "pnpm biome format . --write && pnpm biome check . --write ",
+    "lint:fix": "pnpm biome lint --write --unsafe ."
   },
   "dependencies": {
     "next": "15.1.6",
