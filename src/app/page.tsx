@@ -1,3 +1,7 @@
 export default function HomePage() {
-  return <div></div>;
+  return (
+    <div>
+      <h1>FastThings Home Page</h1>
+    </div>
+  );
 }
