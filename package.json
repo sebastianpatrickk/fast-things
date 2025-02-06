@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.2.16",
+    "@tanstack/react-router": "^1.99.8",
     "drizzle-orm": "^0.39.1",
     "next": "15.1.6",
     "react": "^19.0.0",
