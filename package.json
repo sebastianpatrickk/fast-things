@@ -8,9 +8,14 @@
     "start": "next start",
     "lint": "biome lint .",
     "format": "pnpm biome format . --write && pnpm biome check . --write ",
-    "lint:fix": "pnpm biome lint --write --unsafe ."
+    "lint:fix": "pnpm biome lint --write --unsafe .",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push"
   },
   "dependencies": {
+    "@electric-sql/pglite": "^0.2.16",
+    "drizzle-orm": "^0.39.1",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -21,6 +26,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^0.30.4",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
