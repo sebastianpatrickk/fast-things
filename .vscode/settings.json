@@ -1,15 +1,7 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit"
-  },
-  "editor.defaultFormatter": "biomejs.biome",
-  "editor.formatOnSave": true,
-
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ]
 }
