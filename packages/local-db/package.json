@@ -1,0 +1,26 @@
+{
+  "name": "@repo/local-db",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "generate": "drizzle-kit generate",
+    "push": "drizzle-kit push",
+    "migrate": "drizzle-kit migrate",
+    "studio": "drizzle-kit studio",
+    "lint": "eslint \"**/*.ts\""
+  },
+  "exports": {
+    "default": "./index.ts"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "^8.57.0",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.2.16",
+    "drizzle-kit": "^0.30.4",
+    "drizzle-orm": "^0.39.2"
+  }
+}
