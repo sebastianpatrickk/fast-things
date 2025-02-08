@@ -1,0 +1,1 @@
+[{"sql":["CREATE TABLE IF NOT EXISTS \"projects\" (\n\t\"id\" integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY (sequence name \"projects_id_seq\" INCREMENT BY 1 MINVALUE 1 MAXVALUE 2147483647 START WITH 1 CACHE 1),\n\t\"name\" varchar(255) NOT NULL\n);\n"],"bps":true,"folderMillis":1739007016655,"hash":"8e95a4c7b127f6e5f541e6aa45050dcf3832da9cf45dc1899cad8641d8d5f484"}]
