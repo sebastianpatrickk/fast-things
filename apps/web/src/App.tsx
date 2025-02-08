@@ -1,4 +1,3 @@
 export default function App() {
-
-  return <p>Hello</p>
+  return <p>Hello</p>;
 }
