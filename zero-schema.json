@@ -1,11 +1,5 @@
 {
-  "permissions": {
-    "user": {
-      "row": {
-        "update": {}
-      }
-    }
-  },
+  "permissions": {},
   "schema": {
     "version": 1,
     "tables": {
@@ -21,9 +15,37 @@
             "type": "string",
             "optional": false,
             "customType": null
+          }
+        },
+        "primaryKey": [
+          "id"
+        ]
+      },
+      "task": {
+        "name": "task",
+        "columns": {
+          "id": {
+            "type": "string",
+            "optional": false,
+            "customType": null
           },
-          "partner": {
-            "type": "boolean",
+          "name": {
+            "type": "string",
+            "optional": false,
+            "customType": null
+          },
+          "status": {
+            "type": "string",
+            "optional": false,
+            "customType": null
+          },
+          "createdById": {
+            "type": "string",
+            "optional": false,
+            "customType": null
+          },
+          "assignedToId": {
+            "type": "string",
             "optional": false,
             "customType": null
           }
@@ -33,6 +55,33 @@
         ]
       }
     },
-    "relationships": {}
+    "relationships": {
+      "task": {
+        "createdBy": [
+          {
+            "sourceField": [
+              "createdById"
+            ],
+            "destField": [
+              "id"
+            ],
+            "destSchema": "user",
+            "cardinality": "one"
+          }
+        ],
+        "assignedTo": [
+          {
+            "sourceField": [
+              "assignedToId"
+            ],
+            "destField": [
+              "id"
+            ],
+            "destSchema": "user",
+            "cardinality": "one"
+          }
+        ]
+      }
+    }
   }
 }

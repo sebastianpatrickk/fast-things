@@ -6,6 +6,12 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@rocicorp/zero-sqlite3"
+    ],
+    "ignoredBuiltDependencies": [
+      "@biomejs/biome",
+      "esbuild",
+      "protobufjs",
+      "sharp"
     ]
   },
   "scripts": {

@@ -5,19 +5,27 @@ CREATE DATABASE zstart_cdb;
 \c zstart;
 
 CREATE TABLE "user" (
-  "id" VARCHAR PRIMARY KEY,
-  "name" VARCHAR NOT NULL,
-  "partner" BOOLEAN NOT NULL
+  "id" TEXT PRIMARY KEY,
+  "name" TEXT
+);
+
+CREATE TABLE "task" (
+  "id" TEXT PRIMARY KEY,
+  "name" TEXT,
+  "status" TEXT,
+  "createdById" TEXT REFERENCES "user"("id"),
+  "assignedToId" TEXT REFERENCES "user"("id")
 );
 
 
+INSERT INTO "user" (id, name) VALUES ('u001', 'Alice');
+INSERT INTO "user" (id, name) VALUES ('u002', 'Bob');
 
-INSERT INTO "user" (id, name, partner) VALUES ('ycD76wW4R2', 'Aaron', true);
-INSERT INTO "user" (id, name, partner) VALUES ('IoQSaxeVO5', 'Matt', true);
-INSERT INTO "user" (id, name, partner) VALUES ('WndZWmGkO4', 'Cesar', true);
-INSERT INTO "user" (id, name, partner) VALUES ('ENzoNm7g4E', 'Erik', true);
-INSERT INTO "user" (id, name, partner) VALUES ('dLKecN3ntd', 'Greg', true);
-INSERT INTO "user" (id, name, partner) VALUES ('enVvyDlBul', 'Darick', true);
-INSERT INTO "user" (id, name, partner) VALUES ('9ogaDuDNFx', 'Alex', true);
-INSERT INTO "user" (id, name, partner) VALUES ('6z7dkeVLNm', 'Dax', false);
-INSERT INTO "user" (id, name, partner) VALUES ('7VoEoJWEwn', 'Nate', false);
+INSERT INTO "task" (id, name, status, "createdById", "assignedToId") VALUES
+  ('t001', 'Get milk', 'done', 'u001', 'u001');
+INSERT INTO "task" (id, name, status, "createdById", "assignedToId") VALUES
+  ('t002', 'Get cookies', 'in-progress', 'u001', 'u001');
+INSERT INTO "task" (id, name, status, "createdById", "assignedToId") VALUES
+  ('t003', 'Walk the dog', 'in-progress', 'u002', 'u002');
+INSERT INTO "task" (id, name, status, "createdById", "assignedToId") VALUES
+  ('t004', 'Buy movie tickets', 'not-started', 'u002', 'u001');

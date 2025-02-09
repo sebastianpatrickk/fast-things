@@ -4,11 +4,6 @@ services:
     shm_size: 1g
     user: postgres
     restart: always
-    healthcheck:
-      test: 'pg_isready -U user --dbname=postgres'
-      interval: 10s
-      timeout: 5s
-      retries: 5
     ports:
       - 5430:5432
     environment:
