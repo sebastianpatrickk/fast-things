@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "user": {
+      "row": {
+        "update": {}
+      }
+    }
+  },
+  "schema": {
+    "version": 1,
+    "tables": {
+      "user": {
+        "name": "user",
+        "columns": {
+          "id": {
+            "type": "string",
+            "optional": false,
+            "customType": null
+          },
+          "name": {
+            "type": "string",
+            "optional": false,
+            "customType": null
+          },
+          "partner": {
+            "type": "boolean",
+            "optional": false,
+            "customType": null
+          }
+        },
+        "primaryKey": [
+          "id"
+        ]
+      }
+    },
+    "relationships": {}
+  }
+}

@@ -2,15 +2,27 @@
   "name": "fast-things",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@rocicorp/zero-sqlite3"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "biome lint .",
     "format": "pnpm biome format . --write && pnpm biome check . --write ",
-    "lint:fix": "pnpm biome lint --write --unsafe ."
+    "lint:fix": "pnpm biome lint --write --unsafe .",
+    "dev:zero-cache": "zero-cache-dev -p ./src/db/schema.ts",
+    "dev:db-up": "docker compose --env-file .env -f ./docker/docker-compose.yml up",
+    "dev:db-down": "docker compose --env-file .env -f ./docker/docker-compose.yml down",
+    "dev:clean": "source .env && docker volume rm -f docker_zstart_pgdata && rm -rf \"${ZERO_REPLICA_FILE}\"*"
   },
   "dependencies": {
+    "@rocicorp/zero": "^0.14.2025020701",
+    "nanoid": "^5.0.9",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
