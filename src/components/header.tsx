@@ -3,7 +3,7 @@ import { buttonVariants } from "./ui/button";
 
 export default function Header() {
   return (
-    <header className="flex h-14 w-full items-center justify-between border-border border-b px-8 py-4">
+    <header className="flex h-16 w-full items-center justify-between border-border border-b px-8 py-4">
       <div className="">
         <Link className="font-bold text-lg" href="/">
           FastThings
